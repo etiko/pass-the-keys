@@ -1,0 +1,99 @@
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 980px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  .inner {
+    padding: 10px;
+  }
+}
+
+.header,
+.footer {
+  background: $grey-dk;
+}
+
+.footer {
+  max-width: 980px;
+  margin-top: auto;
+  width: calc(100% - 20px);
+  background: $grey-dk;
+
+  .inner {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.wrapper-container {
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+
+    > * {
+      flex: 1 100%;
+      margin: 20px 0;
+    }
+  }
+
+  .main {
+    margin-right: 20px;
+    margin-left: 20px;
+    display: contents;
+    @media (min-width: 768px) {
+      flex: 1 0px;
+      display: block;
+      order: 2;
+    }
+
+    .inner-content {
+      background: $grey-dk;
+      padding: 10px;
+
+      &.first {
+        margin-bottom: 20px;
+      }
+
+      &.last {
+        order: 2;
+        width: 100%;
+        margin: 0 0 20px;
+        @media (min-width: 768px) {
+          width: auto;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .aside {
+    background: $grey-dk;
+    padding: 10px;
+    @media (min-width: 768px) {
+      flex: 1 0 0;
+    }
+    &.aside-1 {
+      @media (min-width: 768px) {
+        order: 1;
+      }
+    }
+    &.aside-2 {
+      width: 100%;
+      margin: 0 0 20px;
+
+      @media (min-width: 768px) {
+        order: 3;
+        margin: 20px 0;
+      }
+    }
+  }
+}
